@@ -1,0 +1,20 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+
+
+public class UDPSend {
+
+	public static void main(String[] args)throws Exception {
+		// TODO Auto-generated method stub
+		DatagramSocket ds=new DatagramSocket(10000);
+		//确定数据并封包
+		byte [] data="connection succeeeding".getBytes();
+		DatagramPacket dp=new DatagramPacket(data, data.length,InetAddress.getByName("王爽"), 10000);
+		//发包
+		ds.send(dp);
+		//关闭资源
+		ds.close();
+	}
+
+}

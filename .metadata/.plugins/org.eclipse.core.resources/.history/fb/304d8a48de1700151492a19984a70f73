@@ -1,0 +1,12 @@
+import java.net.DatagramSocket;
+
+
+public class UDPReceive {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DatagramSocket ds=new DatagramSocket();
+		byte []data=new byte[22];
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+
+public class Send implements Runnable {
+	private DatagramSocket ds;
+	public Send(DatagramSocket ds) {
+		// TODO Auto-generated constructor stub
+		
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
