@@ -1,0 +1,11 @@
+import java.net.InetAddress;
+
+
+public class IPDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		InetAddress i=InetAddress.getLocalHost();
+	}
+
+}

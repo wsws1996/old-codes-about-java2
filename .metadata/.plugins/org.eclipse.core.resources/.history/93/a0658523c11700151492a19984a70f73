@@ -1,0 +1,16 @@
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+
+public class IPDemo {
+
+	public static void main(String[] args) throws UnknownHostException {
+		// TODO Auto-generated method stub
+		InetAddress ia=InetAddress.getByName("www.baidu.com");
+		System.out.println(ia.getHostAddress());
+		InetAddress sh=InetAddress.getByName("www.sina.com");
+		System.out.println("sina:"+sh.getHostAddress());
+	}
+
+}
