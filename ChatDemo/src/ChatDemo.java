@@ -7,8 +7,10 @@ public class ChatDemo {
 		// TODO Auto-generated method stub
 		DatagramSocket sendSocket=new DatagramSocket();
 		DatagramSocket receSocket=new DatagramSocket(10000);
-		new Thread(new Send(sendSocket)).start();
-		new Thread(new Rece(receSocket)).start();
+		Rece R=new Rece(receSocket);
+		Send S=new Send(sendSocket);
+		new Thread(R).start();
+		new Thread(S).start();
 	}
 
 }

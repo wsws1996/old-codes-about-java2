@@ -21,12 +21,14 @@ public class UDPReceive {
 		f.add(t);
 		f.setVisible(true);
 		@SuppressWarnings("resource")
-		DatagramSocket ds=new DatagramSocket(80);
+		DatagramSocket ds=new DatagramSocket(10000);
 		while(true){
 			byte []data=new byte[1024];
 			DatagramPacket dp=new DatagramPacket(data, data.length);
 			//接受数据
+			System.out.print("开始接受");
 			ds.receive(dp);
+			System.out.println("接受完毕");
 			String ip=dp.getAddress().getHostAddress();
 			String s=new String(dp.getData(),0,dp.getLength());
 			int port=dp.getPort();

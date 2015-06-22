@@ -19,7 +19,7 @@ public class UDPSend {
 					break;
 				//确定数据并封包
 				byte [] data=s.getBytes();
-				DatagramPacket dp=new DatagramPacket(data, data.length,InetAddress.getByName("王爽"), 10000);
+				DatagramPacket dp=new DatagramPacket(data, data.length,InetAddress.getByName("192.168.253.255"), 10000);
 				//发包
 				ds.send(dp);
 			}

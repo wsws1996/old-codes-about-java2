@@ -20,8 +20,9 @@ public class Send implements Runnable {
 			while ((line=bufr.readLine())!=null) {
 				if("886".equals(line))
 					break;
-				DatagramPacket dp=new DatagramPacket(line.getBytes(), line.getBytes().length,InetAddress.getByName("ÍõË¬"),10000);
+				DatagramPacket dp=new DatagramPacket(line.getBytes(), line.getBytes().length,InetAddress.getByName("192.168.253.255"),10000);
 				ds.send(dp);
+		
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

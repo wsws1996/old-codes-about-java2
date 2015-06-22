@@ -1,7 +1,0 @@
-import java.net.*;
-
-
-public class UDPSend {
-	//1.创建UDP服务
-	DatagramSocket ds=new DatagramSocket();
-}

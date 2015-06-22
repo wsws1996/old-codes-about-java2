@@ -21,6 +21,7 @@ public class Rece implements Runnable{
 				String data=new String(dp.getData(),0,dp.getLength());
 				int port=dp.getPort();
 				System.out.println(ip+"::"+data+"::"+port);
+
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
