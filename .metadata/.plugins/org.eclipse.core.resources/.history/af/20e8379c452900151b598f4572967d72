@@ -1,0 +1,40 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+
+
+public class UserThread implements Runnable {
+	private Socket s;
+	public UserThread(Socket s) {
+		// TODO Auto-generated constructor stub
+		this.s=s;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			for(int x=0;x<3;++x){
+				BufferedReader bufin=
+					new BufferedReader(new InputStreamReader(s.getInputStream()));
+					String name=bufin.readLine();
+				BufferedWriter bufrs=
+						new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
+				BufferedReader bufr=
+					new BufferedReader(new FileReader(new File("e:\\User.txt")));
+				String line=null;
+				while (null!=(line=bufr.readLine())) {
+					if(line.equals(name))
+						
+						
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

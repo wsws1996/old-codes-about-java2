@@ -1,0 +1,54 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class ReceivePic implements Runnable {
+	private ServerSocket ss;
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		Socket s = null;
+		try {
+			s = ss.accept();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStream in;
+		try {
+			in = s.getInputStream();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		FileOutputStream fos;
+		try {
+			fos = new FileOutputStream("sever.bmp");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte[] buf = new byte[1024];
+		int len = 0;
+		try {
+			while (-1 != (len = in.read(buf))) {
+				fos.write(buf, 0, len);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		OutputStream outputStream = s.getOutputStream();
+		outputStream.write("上传成功".getBytes());
+		fos.close();
+		s.close();
+		ss.close();
+	}
+
+}

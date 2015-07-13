@@ -1,0 +1,22 @@
+import java.net.Socket;
+
+
+public class UserThread implements Runnable {
+	private Socket s;
+	public UserThread(Socket s) {
+		// TODO Auto-generated constructor stub
+		this.s=s;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			for(int x=0;x<3;++x){
+				
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}
